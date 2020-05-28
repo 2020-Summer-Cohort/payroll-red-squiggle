@@ -10,7 +10,7 @@ namespace CompanyPayroll
         String firstName;
         String lastName;
         double paycheckTotal;
-
+        double employeeBonus;
         public int EmployeeID
         { 
             get { return this.employeeId;  }
@@ -30,9 +30,14 @@ namespace CompanyPayroll
         public double PaycheckTotal
         {
             get { return this.paycheckTotal; }
-            //set { this.paycheckTotal = value; }
+            set { this.paycheckTotal = value; }
         }
 
+        public double EmployeeBonus
+        {
+            get { return this.employeeBonus; }
+            set { this.employeeBonus = value; }
+        }
          
 
         abstract public void SetPaycheckTotal();
