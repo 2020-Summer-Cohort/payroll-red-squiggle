@@ -11,7 +11,7 @@ namespace CompanyPayroll
             this.PaycheckTotal = HoursWorked * HourlyRate;
         }
         private int HoursWorked;
-        private double HourlyRate = 20.00;
+        private double HourlyRate = 20;
 
         public void SetHoursWorked(int newhoursWorked)
         {
