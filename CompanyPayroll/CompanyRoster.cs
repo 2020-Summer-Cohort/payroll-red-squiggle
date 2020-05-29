@@ -32,6 +32,8 @@ namespace CompanyPayroll
             //this.listOfAllEmployees.Add(new PayrollDeveloper());
             PayrollSales mySales = new PayrollSales(4);
             this.Allemployees.Add(mySales);
+
+            //Add( new PayrollHourly())
             PayrollHourly myHourly1 = new PayrollHourly(5);
             PayrollHourly myHourly2 = new PayrollHourly(6);
             this.Allemployees.Add(myHourly1);
@@ -46,18 +48,15 @@ namespace CompanyPayroll
             {
                 Console.WriteLine("EmployeeID: " + person.EmployeeID + "  " + person.PaycheckTotal.ToString("C2"));
 
-
-
-
             }
         }
 
 
 
             public void CalculatePay()
-        {
-             foreach  (PayrollEmployee person in this.Allemployees)
             {
+                foreach  (PayrollEmployee person in this.Allemployees)
+                {
 
 
 
@@ -71,7 +70,6 @@ namespace CompanyPayroll
                     PayrollDeveloper myEmp = (PayrollDeveloper)person;
                     myEmp.RecieveBonus(inputVal);
                     myEmp.PayInsurance();
-
 
                 }
 
@@ -98,7 +96,8 @@ namespace CompanyPayroll
                 }
                 else if  (person is PayrollHourly)
                 {
-                    Console.WriteLine("Please enter hours worked: ");
+                    
+                    Console.WriteLine("This emplyee is hourly, please enter hours worked: ");
                     string val = Console.ReadLine();
                     int hoursWorked = int.Parse(val);
 
