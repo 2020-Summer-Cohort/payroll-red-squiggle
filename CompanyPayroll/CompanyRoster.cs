@@ -10,8 +10,10 @@ namespace CompanyPayroll
         
         public CompanyRoster()
         {
+            
+            
             PayrollExecutive myExec = new PayrollExecutive(0);
-
+            this.Allemployees.Add(myExec);
 
             //Create three devs
             PayrollDeveloper payrollDeveloper1 = new PayrollDeveloper(1);
@@ -42,7 +44,7 @@ namespace CompanyPayroll
 
             foreach (PayrollEmployee person in this.Allemployees)
             {
-                Console.WriteLine("EmployeeID: " + person.EmployeeID + "  " + person.PaycheckTotal.ToString("{0:c}"));
+                Console.WriteLine("EmployeeID: " + person.EmployeeID + "  " + person.PaycheckTotal.ToString("C2"));
 
 
 
@@ -62,7 +64,7 @@ namespace CompanyPayroll
                 if (person is PayrollDeveloper)
                 {
 
-                    Console.WriteLine("This employee is a developer, please enter their bonus amount: ");
+                    Console.WriteLine("This employee is a developer with employeeID: " + person.EmployeeID  + ", please enter their bonus amount: ");
                     string val = Console.ReadLine();
                     double inputVal = double.Parse(val);
 
@@ -107,19 +109,17 @@ namespace CompanyPayroll
                 }
 
 
-                Console.WriteLine("Employees total will now be calculated which will take a moment to compute!!");
-               System.Threading.Thread.Sleep(1000);
+               
                 person.SetPaycheckTotal();
 
-                Console.WriteLine("All employee data was entered... The total will now be calculated");
+               
 
 
             }
 
-
-
-
-
+            Console.WriteLine("ALl Employees total will now be calculated which will take a moment to compute!!");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("All employee data was entered... The total will now be calculated");
         }
     }
     

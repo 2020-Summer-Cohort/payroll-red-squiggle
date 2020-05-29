@@ -5,7 +5,7 @@ using System.Text;
 namespace CompanyPayroll
 {
 
-    abstract class PayrollEmployee
+    public abstract class PayrollEmployee
     {
         private int employeeId;
         String firstName;
