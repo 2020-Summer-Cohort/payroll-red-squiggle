@@ -9,6 +9,13 @@ namespace CompanyPayroll
 
         public double PayPeriodEarnings = 20000.00;
         private double InsuranceAmount = 10.00;
+       
+
+        public PayrollExecutive(int empID)
+        {
+            this.EmployeeID = empID;
+        }
+
         public void RecieveBonus(double BonusAmount)
         {
             this.EmployeeBonus = BonusAmount * 3;

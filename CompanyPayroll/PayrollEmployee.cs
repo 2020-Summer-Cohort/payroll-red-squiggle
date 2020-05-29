@@ -4,17 +4,21 @@ using System.Text;
 
 namespace CompanyPayroll
 {
-    abstract class PayrollEmployee
+
+    public abstract class PayrollEmployee
     {
         private int employeeId;
         String firstName;
         String lastName;
         double paycheckTotal;
         double employeeBonus;
+
+
+
         public int EmployeeID
         { 
             get { return this.employeeId;  }
-            set { this.employeeId = value;  }
+            set { this.employeeId = value; }
         
         }
         public string FirstName
@@ -42,6 +46,7 @@ namespace CompanyPayroll
 
         abstract public void SetPaycheckTotal();
 
+       
 
         
     }

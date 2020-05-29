@@ -12,6 +12,11 @@ namespace CompanyPayroll
         }
         private int HoursWorked;
         private double HourlyRate = 20;
+      
+        public PayrollHourly(int empID)
+        {
+            this.EmployeeID = empID;
+        }
 
         public void SetHoursWorked(int newhoursWorked)
         {

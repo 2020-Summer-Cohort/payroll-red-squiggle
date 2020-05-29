@@ -4,9 +4,22 @@ namespace CompanyPayroll
 {
     class Program
     {
+       
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DoPayrollThisPeriod();
+
+            }
+
+
+        private static void DoPayrollThisPeriod()
+        {
+
+            CompanyRoster companyRoster = new CompanyRoster();
+            companyRoster.CalculatePay();
+            companyRoster.ListEmployeePayForPeriod();
+
+
         }
     }
 }
