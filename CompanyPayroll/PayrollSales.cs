@@ -8,6 +8,12 @@ namespace CompanyPayroll
     {
         public double SalesCommision;
         double PayPeriodEarning = 3000.00;
+        private int v;
+
+        public PayrollSales(int v)
+        {
+            this.v = v;
+        }
 
         public override void SetPaycheckTotal()
         {
@@ -18,7 +24,7 @@ namespace CompanyPayroll
         {
             this.EmployeeBonus = payPeriodBonus;
         }
-
+        
         public double SalesCommission
         {
             get { return this.SalesCommission; }
@@ -29,12 +35,7 @@ namespace CompanyPayroll
             get { return this.PayPeriodEarning; }
             set { this.PayPeriodEarning = value; }
         }
-      
-        //no insurance yet
-        //public void NoInsurance()
-        //{ 
-
-        //}
+    
 
     }
 }
