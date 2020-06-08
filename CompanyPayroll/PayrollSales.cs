@@ -9,9 +9,12 @@ namespace CompanyPayroll
         public double salesCommission = 0.00;
         double PayPeriodEarning = 3000.00;
         
-        public PayrollSales(int v)
+        public PayrollSales(int empID, string firstName, string lastName)
         {
-           this.EmployeeID = v;
+            this.EmployeeID = empID;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+
         }
 
         public override void SetPaycheckTotal()

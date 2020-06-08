@@ -12,16 +12,17 @@ namespace CompanyPayroll
         {
             
             
-            PayrollExecutive myExec = new PayrollExecutive(0);
+            PayrollExecutive myExec = new PayrollExecutive(0, "Bill", "Gates");
             this.Allemployees.Add(myExec);
 
             //Create three devs
-            PayrollDeveloper payrollDeveloper1 = new PayrollDeveloper(1);
-            PayrollDeveloper payrollDeveloper2 = new PayrollDeveloper(2);
-            PayrollDeveloper payrollDeveloper3 = new PayrollDeveloper(3);
-           
-            
-            
+            PayrollDeveloper payrollDeveloper1 = new PayrollDeveloper(1, "Mike", "Bloomberg");
+            PayrollDeveloper payrollDeveloper2 = new PayrollDeveloper(2, "Larry", "Stevenson");
+            PayrollDeveloper payrollDeveloper3 = new PayrollDeveloper(3, "Valerija", "Sestic");
+
+
+
+
             this.Allemployees.Add(payrollDeveloper1);
             this.Allemployees.Add(payrollDeveloper2);
             this.Allemployees.Add(payrollDeveloper3);
@@ -30,12 +31,12 @@ namespace CompanyPayroll
             
             
             //this.listOfAllEmployees.Add(new PayrollDeveloper());
-            PayrollSales mySales = new PayrollSales(4);
+            PayrollSales mySales = new PayrollSales(4, "Johnny", "Dev");
             this.Allemployees.Add(mySales);
 
             //Add( new PayrollHourly())
-            PayrollHourly myHourly1 = new PayrollHourly(5);
-            PayrollHourly myHourly2 = new PayrollHourly(6);
+            PayrollHourly myHourly1 = new PayrollHourly(5, "Sammy", "Minutes");
+            PayrollHourly myHourly2 = new PayrollHourly(6, "Joe", "Smith");
             this.Allemployees.Add(myHourly1);
             this.Allemployees.Add(myHourly2);
         }
@@ -43,12 +44,15 @@ namespace CompanyPayroll
 
         public void ListEmployeePayForPeriod()
         {
-
+            double payTotal = 0.0d;
             foreach (PayrollEmployee person in this.Allemployees)
             {
-                Console.WriteLine("EmployeeID: " + person.EmployeeID + "  " + person.PaycheckTotal.ToString("C2"));
-
+                Console.WriteLine("Employee: " + person.IdEmployeeName + "  " + person.PaycheckTotal.ToString("C2"));
+                payTotal += person.PaycheckTotal;
             }
+
+            Console.WriteLine("Total for this pay period is: " + payTotal.ToString("C2"));
+            System.Threading.Thread.Sleep(3000);
         }
 
 

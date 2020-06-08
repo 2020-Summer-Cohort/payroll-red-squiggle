@@ -8,8 +8,8 @@ namespace CompanyPayroll
     public abstract class PayrollEmployee
     {
         private int employeeId;
-        String firstName;
-        String lastName;
+        string firstName;
+        string lastName;
         double paycheckTotal;
         double employeeBonus;
 
@@ -43,6 +43,13 @@ namespace CompanyPayroll
             set { this.employeeBonus = value; }
         }
          
+        public string IdEmployeeName
+        {
+            get
+            {
+                return this.employeeId+"\t"+ this.firstName+"\t" + this.lastName+"\t";
+            }
+        }
 
         abstract public void SetPaycheckTotal();
 

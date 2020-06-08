@@ -10,9 +10,11 @@ namespace CompanyPayroll
         private double InsuranceAmount = 80.00;
        
 
-        public PayrollDeveloper(int empID)
+        public PayrollDeveloper(int empID, string firstName, string lastName)
         {
-             this.EmployeeID = empID;
+            this.EmployeeID = empID;
+            this.FirstName = firstName;
+            this.LastName = lastName;
         }
 
         public void RecieveBonus(double BonusAmount)
